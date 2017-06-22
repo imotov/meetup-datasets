@@ -4,4 +4,4 @@ https://data.boston.gov/dataset/crime-incident-reports-august-2015-to-date-sourc
 
 To load this dataset into Elasticsearch v5.4 use the following command line:
 
-cat crime.csv | ../../logstash-5.4.2/bin/logstash -f logstash.conf | more
+cat crime.csv | ../../logstash-5.4.2/bin/logstash -f logstash.conf

@@ -1,0 +1,76 @@
+{
+    "template": "boston-crime",
+    "settings": {
+        "number_of_shards": 1,
+        "number_of_replicas": 0
+    },
+    "mappings": {
+        "doc": {
+            "dynamic_templates": [{
+                "string_fields": {
+                    "mapping": {
+                        "index": "not_analyzed",
+                        "type": "string"
+                    },
+                    "match_mapping_type": "string",
+                    "match": "*"
+                }
+            }],
+            "_all": {
+                "enabled": false
+            },
+            "properties": {
+                "@timestamp": {
+                    "type": "date",
+                    "format": "dateOptionalTime"
+                },
+                "@version": {
+                    "type": "integer"
+                },
+                "incident_number": {
+                    "type": "keyword"
+                },
+                "offense_code": {
+                    "type": "integer"
+                },
+                "offense_code_group": {
+                    "type": "keyword"
+                },
+                "district": {
+                    "type": "keyword"
+                },
+                "reporting_area": {
+                    "type": "integer",
+                    "ignore_malformed": true
+                }, 
+                "shooting": {
+                    "type": "keyword"
+                },
+                "year": {
+                    "type": "integer"
+                }, 
+                "month": {
+                    "type": "integer"
+                },
+                "day_week": {
+                    "type": "keyword"
+                }, 
+                "hours": {
+                    "type": "integer"
+                }, 
+                "ucrpart": {
+                    "type": "keyword"
+                }, 
+                "streetname": {
+                    "type": "keyword"
+                }, 
+                "location": {
+                    "type": "geo_point"
+                },
+                "year": {
+                    "type": "integer"
+                }
+            }
+        }
+    }
+}

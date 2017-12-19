@@ -9,16 +9,12 @@
             "dynamic_templates": [{
                 "string_fields": {
                     "mapping": {
-                        "index": "not_analyzed",
-                        "type": "string"
+                        "type": "keyword"
                     },
                     "match_mapping_type": "string",
                     "match": "*"
                 }
             }],
-            "_all": {
-                "enabled": false
-            },
             "properties": {
                 "@timestamp": {
                     "type": "date",
